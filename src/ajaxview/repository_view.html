@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <title>Browse Subversion</title>
+
+  <link type="text/css" href="./libs/css/humanity/jquery-ui-1.8.18.custom.css" rel="stylesheet" />	
+  <link type="test/css" href="./repository_view.css" rel="stylesheet" />
+
+  <script type="text/javascript" src="./libs/js/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="./libs/js/jquery-ui-1.8.18.custom.min.js"></script>
+  <script type="text/javascript" src="./libs/splitter.js"></script>
+
+  <script type="text/javascript" src="../dav_svn.js"></script>
+  <script type="text/javascript" src="./dav_svn_model.js"></script>
+  <script type="text/javascript" src="./repository_view.js"></script>
+</head>
+<body>
+  <div id="main">
+    <div id="path_view"></div>
+    <div id="content_widget" class="ui-widget-content">
+      <h2 id="content_header" class="ui-widget-header"><span>Contents</span><div class="ui-helper-clearfix revision_setting_elem">@<span id="revision_setting"></span></div></h2>
+      <div id="content_frame">
+        <div id="dir_tree"></div>
+        <div id="file_list"></div>
+      </div>
+    </div>
+
+    <div id="log_widget" class="ui-widget-content">
+      <h2 id="log_header" class="ui-widget-header">Logs</h2>
+      <div id="log_frame">
+        <div id="log_view"></div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+  
+</body>
+</html>

@@ -1,0 +1,269 @@
+
+/* extend jQuery */
+.ui-icon-inline-block{
+    display: inline-block;
+}
+.ui-icon-loading{
+    background-image: url(images/ajax_loader.gif) !important;
+    background-size: 100%;
+}
+.ui-resize-helper{
+    border: 2px dotted #00F;
+}
+
+/*********************************************/
+#path_view{
+    font-size: larger;
+    border-bottom: 1px dashed black;
+    margin: 0.25em 1em;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+#path_view > span > span{
+    cursor: pointer;
+}
+#path_view > span > span:hover{
+    text-decoration: underline;
+}
+
+/*********************************************/
+/* Main frame and splitter */
+#toggle_ajaxview{
+    float: right;
+    margin-right: 1em;
+}
+#content_widget, #log_widget{
+    margin: 1em;
+}
+#content_header, #log_header{
+    margin: 0px;
+    padding: 0.25em 1em;
+}
+#content_frame{
+    width: 100%;
+    height: 500px;
+}
+#content_frame > div.vsplitbar{
+    width: 3px;
+    background-color: inherit;
+    cursor: e-resize;
+    cursor: col-resize;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+}
+#content_frame > div.vsplitbar.active{
+    background-color: #000;
+}
+#log_frame{
+    /* height: 500px; */
+    overflow: auto;
+}
+
+/*********************************************/
+.revision_setting_elem{
+    float: right;
+}
+#revision_setting:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*********************************************/
+/* DirectoryView */
+#dir_tree{
+    overflow: auto;
+    width: 25%;
+    min-width: 50px;
+}
+#dir_tree > .svn_root{
+    min-width: 100%;
+    width: auto;
+    position: absolute; /* to fit content's width */
+}
+#dir_tree > .svn_root > dl{
+    margin: 0px;
+}
+dt.svn_resource_title{
+    white-space: nowrap;
+    padding-right: 1em;
+}
+dt.svn_resource_title > span > *{
+    vertical-align: middle;
+}
+dt.svn_resource_title > span > .dir_collapse{
+    cursor: pointer;
+}
+dt.svn_resource_title > span > a{
+    cursor: pointer;
+    text-decoration: none;
+}
+dt.svn_resource_title > span > a:hover{
+    text-decoration: underline;
+}
+dd.svn_children_root{
+    margin: 0px;
+    padding: 0px;
+}
+dd.svn_children_root > ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 1em; /* for indent */
+}
+dd.svn_children_root > ul > li{
+    margin: 0px;
+    padding: 0px;
+}
+dd.svn_children_root > ul > li > dl{
+    margin: 0px;
+}
+
+/*********************************************/
+/* file list */
+#file_list{
+    overflow: auto;
+    min-width: 50px;
+}
+table.file_list_view{
+    border-collapse: collapse;
+    width: auto;
+}
+table.file_list_view thead th{
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+table.file_list_view thead th span{
+    cursor: pointer;
+    white-space: nowrap;
+}
+table.file_list_view thead th span:hover{
+    text-decoration: underline;
+}
+table.file_list_view thead th span.ascendant:after{
+    vertical-align: middle;
+    font-size: 0.75em;
+    content: " \25B2"; /* triangle */
+}
+table.file_list_view thead th span.descendant:after{
+    vertical-align: middle;
+    font-size: 0.75em;
+    content: " \25BC"; /* triangle */
+}
+table.file_list_view td{
+    padding: 0.1em 0.5em;
+}
+table.file_list_view tbody tr{
+    cursor: default;
+}
+table.file_list_view tbody td.revision, table.file_list_view tbody td.size{
+    text-align: right;
+}
+table.file_list_view.loading thead{
+    display: none;
+}
+table.file_list_view.loading tbody td{
+    text-align: center;
+}
+table.file_list_view.loading tbody td span{
+    padding-left: 2em;
+    background-image: url("./images/ajax_loader.gif") !important;
+    background-size: 1em;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+table.file_list_view tbody td.name > .dir_link{
+    cursor: pointer;
+}
+table.file_list_view tbody td.name > .dir_link:hover{
+    text-decoration: underline;
+}
+
+/*********************************************/
+/* LogView */
+#log_view{
+    overflow: auto;
+}
+dl.log_view{
+    margin: 0px;
+    padding: 0px;
+}
+dl.log_view > dt{
+    word-wrap: break-word;
+    font-size: larger;
+    margin-left: 1em;
+    padding-left: 1.1em;
+}
+.loading > dl.log_view > dt{
+    background-image: url("./images/ajax_loader.gif") !important;
+    background-size: 1em;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+dl.log_view > dd{
+    margin: 0px;
+    padding: 0px;
+}
+dl.log_view > dd > dl{
+    margin: 0px;
+    border: solid 1px black;
+    padding: 0px;
+}
+dl.log_view > dd > dl > dt > span.ui-icon{
+    cursor: pointer;
+    margin: 0.1em 0.2em;
+}
+dl.log_view > dd > dl > dt > span.revision{
+    text-align: right;
+    padding: 0.1em 0.3em;
+    font-size: larger;
+}
+dl.log_view > dd > dl > dt > time.date{
+    text-align: left;
+    padding: 0.1em 0.3em;
+}
+dl.log_view > dd > dl > dt > span.author{
+    text-align: left;
+    padding: 0.1em 0.3em;
+}
+dl.log_view > dd > dl > dt > span.comment{
+    text-align: left;
+    padding: 0.1em 0.3em;
+    font-family: monospace;
+
+    display: none;
+}
+dl.log_view > dd > dl > dt.collapsed > span.comment{
+    display: inline;
+}
+dl.log_view > dd > dl > dd{
+    margin: 0px;
+    padding: 0.1em 1em 0.1em 4em;
+}
+dl.log_view > dd > dl > dd > div{
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font-family: monospace;
+    padding-bottom: 0.5em;
+}
+dl.log_view > dd > dl > dd ul.path_list{
+    margin: 0px;
+    padding: 0.5em 0.5em 1em 0.5em;
+    border-top: 1px solid black;
+    max-height: 15em;
+    overflow: auto;
+}
+dl.log_view > dd > dl > dd ul.path_list > li{
+    list-style: none;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font-family: monospace;
+}
+dl.log_view > dd > dl > dd ul.path_list > li > span.path_type{
+    padding-right: 1em;
+}
+dl.log_view > dd > dl > dt:nth-child(4n + 1), dl.log_view > dd > dl > dd:nth-child(4n + 2){
+    background-color: #EEE;
+}
+dl.log_view > dd > dl > dt:nth-child(4n + 3), dl.log_view > dd > dl > dd:nth-child(4n + 4){
+    background-color: #FFF;
+}
