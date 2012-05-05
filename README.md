@@ -22,7 +22,7 @@ Logs are also shown in browser.
 ![Logs](https://github.com/masamitsu-murase/subversion_ajax_view/raw/master/resources/images/screenshot_logs.png)
 
 ## How to set up
-1. Download this extension and extract it.
+1. Download this extension from [Download Page](https://github.com/masamitsu-murase/subversion_ajax_view/downloads) and extract it.  
    Put it in the public directory on your Subversion server.  
    I assume that you put it in `/var/www/svn_ajaxview_dir` and client users can access it as `http://server/svn_ajaxview`.  
    Confirm that you can access `http://server/svn_ajaxview/svnindex.xsl` via Firefox, Chrome or Safari.  
