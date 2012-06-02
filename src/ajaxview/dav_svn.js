@@ -29,12 +29,12 @@ var gDavSvn = (function(){
             return null;
         }
 
-        var sec = parseInt(match_data[6]);
+        var sec = parseInt(match_data[6], 10);
         var msec = Math.round((parseFloat(match_data[6]) - sec) * 1000);
-        var value = Date.UTC(parseInt(match_data[1]), parseInt(match_data[2]), parseInt(match_data[3]),
-                             parseInt(match_data[4]), parseInt(match_data[5]), sec, msec);
+        var value = Date.UTC(parseInt(match_data[1], 10), parseInt(match_data[2], 10) - 1, parseInt(match_data[3], 10),
+                             parseInt(match_data[4], 10), parseInt(match_data[5], 10), sec, msec);
         if (!match_data[8]){
-            var diff = parseInt(match_data[10]) * 3600 * 1000 + parseInt(match_data[11]) * 60 * 1000;
+            var diff = parseInt(match_data[10], 10) * 3600 * 1000 + parseInt(match_data[11], 10) * 60 * 1000;
             if (match_data[9] == "+"){
                 value -= diff;
             }else{
