@@ -549,7 +549,7 @@ var gDavSvn = (function(){
             if (relative_path === ""){
                 ret_obj.root_url = url.replace(/\/$/, "") + "/";
             }else{
-                ret_obj.root_url = url.substr(0, url.length - relative_path.length);
+                ret_obj.root_url = url.substr(0, url.length - encodeURI(relative_path).length);
             }
             callback(ret_obj);
         });

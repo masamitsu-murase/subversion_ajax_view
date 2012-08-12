@@ -67,7 +67,7 @@ DavSvnResource.prototype = {
     },
 
     addChild: function(child){
-        var name = child.name();
+        var name = child.name(true);
         this.m_children[name] = child;
         child.setParent(this);
     },
@@ -384,7 +384,7 @@ DavSvnModel.prototype = {
         this.m_root_dir = (this.m_root_dir || new DavSvnResource("", DavSvnResource.TYPE_DIRECTORY));
 
         var dir = this.m_root_dir;
-        var paths = path.split("/");
+        var paths = decodeURIComponent(path).split("/");
         paths.pop();
         paths.forEach(function(name){
             if (dir.hasChild(name)){
@@ -411,7 +411,7 @@ DavSvnModel.prototype = {
             return this.m_root_dir;
         }
 
-        var paths = path.split("/");
+        var paths = decodeURIComponent(path).split("/");
         var dir = this.m_root_dir;
         for (var i=0; i<paths.length; i++){
             var name = paths[i];
@@ -477,7 +477,7 @@ DavSvnPjaxState.setPageTitle = function(title){
         while(t.firstChild){
             t.removeChild(t.firstChild);
         }
-        t.appendChild(document.createTextNode(title));
+        t.appendChild(document.createTextNode(decodeURIComponent(title)));
     }catch(e){
     }
 };
