@@ -458,13 +458,13 @@ var DavSvnPjaxState = function(model){
         }
         self.m_model.setRevision(obj.revision, true);
 
-        var title = obj.path + "@" + obj.revision;
+        var title = decodeURIComponent(obj.path) + "@" + obj.revision;
         DavSvnPjaxState.setPageTitle(title);
     });
 };
 DavSvnPjaxState.prototype = {
     pushState: function(state){
-        var title = state.path + "@" + state.revision;
+        var title = decodeURIComponent(state.path) + "@" + state.revision;
         DavSvnPjaxState.setPageTitle(title);
         window.history.pushState(state, title, DavSvnPjaxState.encodeUrl(this.m_model.repositoryInfo().root_url,
                                                                          state.path, state.revision));
