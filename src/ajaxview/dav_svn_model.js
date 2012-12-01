@@ -9,7 +9,7 @@ var DavSvnResource = function(name, type, info){
         break;
     }
     this.m_state = DavSvnResource.STATE_NOT_LOADED;
-    this.m_name = name;
+    this.m_name = name.replace(/%../g, function(s){ return s.toLowerCase(); });
     this.m_children = {};
     this.m_parent = null;
     this.m_info = (info || {});
@@ -163,7 +163,7 @@ DavSvnResource.STATE_NOT_LOADED = 3;
 
 
 var DavSvnModel = function(url, revision, pjax_state){
-    url = url.replace(/\/$/, "");
+    url = url.replace(/\/$/, "").replace(/%../g, function(s){ return s.toLowerCase(); });
 
     this.m_peg_revision = (revision || "HEAD");
     this.m_operation_revision = (revision || "HEAD");
@@ -530,7 +530,7 @@ DavSvnPjaxState.parseUrl = function(raw_url){
 
 /////////////////////////////////////////////////////////////////
 var DavSvnLogModel = function(url, peg_revision){
-    this.m_url = url.replace(/\/$/, "");
+    this.m_url = url.replace(/\/$/, "").replace(/%../g, function(s){ return s.toLowerCase(); });
     this.m_peg_revision = peg_revision;
     this.m_log_complete = false;
     this.m_state = DavSvnLogModel.STATE_LOADED;
