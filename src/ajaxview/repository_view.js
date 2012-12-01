@@ -699,7 +699,7 @@ $(function(){
 
             var title = document.createElement("dt");
             elem.appendChild(title);
-            title.appendChild(document.createTextNode(this.m_url));
+            title.appendChild(document.createTextNode(this.m_log_model.url()));
 
             var dd = document.createElement("dd");
             elem.appendChild(dd);

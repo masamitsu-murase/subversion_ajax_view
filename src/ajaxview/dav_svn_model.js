@@ -685,6 +685,10 @@ DavSvnLogModel.prototype = {
             self.notify();
         });
         this.notify();
+    },
+
+    url: function(){
+        return decodeURIComponent(this.m_url);
     }
 };
 DavSvnLogModel.INITIAL_LOG_COUNT = 100;
