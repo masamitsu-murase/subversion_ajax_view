@@ -94,7 +94,7 @@
           <!-- ############################################### -->
           <!-- add_start -->
           <div style="float: right; margin-right: 1em;">
-            <a href="https://github.com/masamitsu-murase/subversion_ajax_view">Subversion Ajax View</a>
+            <a href="https://github.com/masamitsu-murase/subversion_ajax_view">Subversion Ajax View (1.0)</a>
           </div>
           <!-- add_end -->
           <!-- ############################################### -->
