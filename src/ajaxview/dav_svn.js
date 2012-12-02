@@ -159,7 +159,7 @@ var gDavSvn = (function(){
                 // Note: path is not escaped.
                 var path = (elem.firstChild ? elem.firstChild.nodeValue : "");
                 obj.path = path.split("/").map(function(i){
-                    return encodeURIComponent(i).replace(/%../g, function(s){ return s.toLowerCase(); });
+                    return encodeURIComponent(i).replace(/%../g, function(s){ return s.toUpperCase(); });
                 }).join("/");
             }catch(e){
                 callback(null);
