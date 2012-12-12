@@ -306,6 +306,22 @@ $(function(){
 
             this.appendDirectoryNodeTitle(resource_title, rsc);
 
+            var createSorter = function(sort_by){
+                return function(l, r){
+                    var lv = sort_by(l);
+                    var rv = sort_by(r);
+                    if (lv < rv){
+                        return -1;
+                    }else if (lv == rv){
+                        return 0;
+                    }else{
+                        return 1;
+                    }
+                };
+            };
+            var default_sorter = createSorter(function(item){ return item.name(true); });
+            var sorter = function(l, r){ return default_sorter(l, r); };
+
             if (rsc.isDirectory() && rsc.dirIsOpened()){
                 // Information of children
                 var children_root = document.createElement("dd");
@@ -315,7 +331,7 @@ $(function(){
                 var ul_children = document.createElement("ul");
                 children_root.appendChild(ul_children);
 
-                rsc.childDirs().forEach(function(child){
+                rsc.childDirs().sort(sorter).forEach(function(child){
                     var li = document.createElement("li");
                     ul_children.appendChild(li);
                     this.createResourceNode(li, child);
